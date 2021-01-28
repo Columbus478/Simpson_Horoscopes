@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public interface BirthdayRepository {
   LocalDate getValidBirthday(String birthdayString);
 
-  String getBirthWeek(LocalDate birthday);
+  String getBirth_Day(LocalDate birthday);
 
   String getChineseZodiac(LocalDate birthday);
 

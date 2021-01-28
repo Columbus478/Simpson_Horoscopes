@@ -39,7 +39,7 @@ public class BirthdayService implements BirthdayRepository {
   }
 
   @Override
-  public String getBirthWeek(LocalDate birthday) {
+  public String getBirth_Day(LocalDate birthday) {
     return birthday.getDayOfWeek().toString();
   }
 

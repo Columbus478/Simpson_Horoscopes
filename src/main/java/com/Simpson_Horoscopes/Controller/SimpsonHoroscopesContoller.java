@@ -29,14 +29,14 @@ public class SimpsonHoroscopesContoller {
   private BirthdayService birthdayService;
 
   @ResponseBody
-  @GetMapping(path = "/birthweek", produces = "application/json")
-  public ResponseEntity<String> getBirthWeek(@RequestBody String birthdayString) {
+  @GetMapping(path = "/day", produces = "application/json")
+  public ResponseEntity<String> getBirth_Day(@RequestBody String birthdayString) {
     String response = null;
     LocalDate birthday = birthdayService.getValidBirthday(birthdayString);
     if (birthday == null) {
       logger.info("getValidBirthday returned:{}", birthday);
     } else {
-      response = birthdayService.getBirthWeek(birthday);
+      response = birthdayService.getBirth_Day(birthday);
       logger.info("SimpsonHoroscopesContoller.getBirthWeek Response body: {}", response);
     }
     return new ResponseEntity<>(response, HttpStatus.OK);

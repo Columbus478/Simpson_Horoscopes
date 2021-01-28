@@ -67,7 +67,7 @@ class BirthdayServiceIT {
 
   private void testGetBirthweek(String birthdayString, String expectedResult) {
     try {
-      MvcResult mvcr = mockmvc.perform(MockMvcRequestBuilders.get("/api/birthday/birthweek")
+      MvcResult mvcr = mockmvc.perform(MockMvcRequestBuilders.get("/api/birthday/day")
           .with(user(test_user)).with(csrf()).content(birthdayString)
           .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
           .andExpect(status().isOk()).andReturn();

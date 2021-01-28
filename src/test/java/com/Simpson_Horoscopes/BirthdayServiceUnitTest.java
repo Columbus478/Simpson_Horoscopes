@@ -15,16 +15,16 @@ public class BirthdayServiceUnitTest {
   BirthdayService birthdayService = new BirthdayService();
 
   @Test
-  void testGetBirthdayWeek() {
-    String BDW = birthdayService.getBirthWeek(LocalDate.of(1979, 7, 14));
+  void testGetBirth_Day() {
+    String BDW = birthdayService.getBirth_Day(LocalDate.of(1979, 7, 14));
     assertEquals("SATURDAY", BDW);
-    BDW = birthdayService.getBirthWeek(LocalDate.of(2018, 1, 23));
+    BDW = birthdayService.getBirth_Day(LocalDate.of(2018, 1, 23));
     assertEquals("TUESDAY", BDW);
-    BDW = birthdayService.getBirthWeek(LocalDate.of(1972, 3, 17));
+    BDW = birthdayService.getBirth_Day(LocalDate.of(1972, 3, 17));
     assertEquals("FRIDAY", BDW);
-    BDW = birthdayService.getBirthWeek(LocalDate.of(1945, 12, 2));
+    BDW = birthdayService.getBirth_Day(LocalDate.of(1945, 12, 2));
     assertEquals("SUNDAY", BDW);
-    BDW = birthdayService.getBirthWeek(LocalDate.of(2003, 8, 4));
+    BDW = birthdayService.getBirth_Day(LocalDate.of(2003, 8, 4));
     assertEquals("MONDAY", BDW);
   }
 
