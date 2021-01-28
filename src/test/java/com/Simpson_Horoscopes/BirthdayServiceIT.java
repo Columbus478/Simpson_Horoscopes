@@ -39,12 +39,12 @@ class BirthdayServiceIT {
   String bd5 = LocalDate.of(2003, 8, 4).format(DateTimeFormatter.ISO_DATE);
 
   @Test
-  void testGetBirtweek() {
-    testGetBirthweek(bd1, "SATURDAY");
-    testGetBirthweek(bd2, "TUESDAY");
-    testGetBirthweek(bd3, "FRIDAY");
-    testGetBirthweek(bd4, "SUNDAY");
-    testGetBirthweek(bd5, "MONDAY");
+  void testGetBirt_day() {
+    testGetBirth_day(bd1, "SATURDAY");
+    testGetBirth_day(bd2, "TUESDAY");
+    testGetBirth_day(bd3, "FRIDAY");
+    testGetBirth_day(bd4, "SUNDAY");
+    testGetBirth_day(bd5, "MONDAY");
   }
 
   @Test
@@ -65,7 +65,7 @@ class BirthdayServiceIT {
     testPostStarSign(bd5, "Leo");
   }
 
-  private void testGetBirthweek(String birthdayString, String expectedResult) {
+  private void testGetBirth_day(String birthdayString, String expectedResult) {
     try {
       MvcResult mvcr = mockmvc.perform(MockMvcRequestBuilders.get("/api/birthday/day")
           .with(user(test_user)).with(csrf()).content(birthdayString)
